@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+  head
+    title To Do List
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  body
+    .container
+      h4.text-danger Create New Task 
+      p 
+        form(method='POST', action='/post')
+            .form-group
+                label(for="text") TaskName
+                br
+                input(type="text" id="text" name="text" value=text)
+            .form-group
+                label(for="completed") Completed or not
+                br
+                input(type='radio', name='completed', value='true' required)
+                |  Completed
+                br
+                input(type='radio', name='completed', value='false' required)
+                |  Uncompleted
+                br
+            .form-group
+                input(type="hidden" name="id" value=id)
+            .form-group
+                button.btn.btn-warning(type="submit") Create
+
+
+        
+      

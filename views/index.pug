@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+  head
+    title To Do List
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  body
+    .container
+      h1.text-danger= title
+      table.table
+                each task in tasks
+                    tr
+                        td
+                            p=task.id
+                        td
+                            p=task.text
+                        td
+                            case task.completed
+                              when 'true'
+                                p(style='color:red;') Complete
+                              when 'false'
+                                p(style='color:brown;') Incomplete
+                              default
+                                p(style='color:brown;') Incomplete
+                        td
+                            a(href='/edit/' + task.id)
+                              button.btn.btn-default(style='margin-right:10px;') Edit task
+                            a(href='/delete/' + task.id)
+                              button.btn.btn-danger Delete task
+
+      a(href='/new/')
+        button.btn.btn-success(style='margin-top:10px;') Add new task
