@@ -16,11 +16,11 @@ html(lang='en')
                         td
                             case task.completed
                               when 'true'
-                                p(style='color:red;') Complete
+                                p(style='color:red;') Completed
                               when 'false'
-                                p(style='color:brown;') Incomplete
+                                p(style='color:brown;') Incompleted
                               default
-                                p(style='color:brown;') Incomplete
+                                p(style='color:brown;') Incompleted
                         td
                             a(href='/edit/' + task.id)
                               button.btn.btn-default(style='margin-right:10px;') Edit task
